@@ -8,7 +8,7 @@ defmodule Dotenv do
     Dotenv.Supervisor.start_link(env_path)
   end
 
-  @pattern %r/^\s*(\w+)\s*[:=]\s*(\S+)\s*$/m
+  @pattern ~r/^\s*(\w+)\s*[:=]\s*(\S+)\s*$/m
 
   defrecord Env, paths: [], values: [] do
     def path(env) do
